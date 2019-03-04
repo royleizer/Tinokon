@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121EBDEF20D94996000A801A /* NamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121EBDEE20D94996000A801A /* NamesViewController.m */; };
+		121EBDF120D9559A000A801A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 121EBDF020D9559A000A801A /* libsqlite3.tbd */; };
+		123BB24C2124679000F3E467 /* shemtovdic.sql in Resources */ = {isa = PBXBuildFile; fileRef = 123BB24B2124679000F3E467 /* shemtovdic.sql */; };
+		127E2E77213456A400087FA1 /* ViewControllerWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E2E76213456A400087FA1 /* ViewControllerWebview.m */; };
+		12AF022D2129A484009E2EC5 /* SimpleTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */; };
+		12C0FFF3213C1939004F6728 /* libPods-shemtov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C0FFF2213C1939004F6728 /* libPods-shemtov.a */; };
+		12DECFF420B5B74100BDD54C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DECFF320B5B74000BDD54C /* GoogleService-Info.plist */; };
+		12DED01720B7075300BDD54C /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DED01620B7075300BDD54C /* DBManager.m */; };
 		12E8772920A332500059ECAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E8772820A332500059ECAB /* AppDelegate.m */; };
 		12E8772C20A332500059ECAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E8772B20A332500059ECAB /* ViewController.m */; };
 		12E8772F20A332510059ECAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E8772D20A332510059ECAB /* Main.storyboard */; };
@@ -17,6 +25,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121EBDED20D94995000A801A /* NamesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NamesViewController.h; sourceTree = "<group>"; };
+		121EBDEE20D94996000A801A /* NamesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NamesViewController.m; sourceTree = "<group>"; };
+		121EBDF020D9559A000A801A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		123BB24B2124679000F3E467 /* shemtovdic.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = shemtovdic.sql; sourceTree = "<group>"; };
+		127E2E75213456A400087FA1 /* ViewControllerWebview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerWebview.h; sourceTree = "<group>"; };
+		127E2E76213456A400087FA1 /* ViewControllerWebview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWebview.m; sourceTree = "<group>"; };
+		1294B43E213C186F005977A4 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1294B440213C189F005977A4 /* libPods-shemtov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-shemtov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12AF022B2129A484009E2EC5 /* SimpleTableCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleTableCellTableViewCell.h; sourceTree = "<group>"; };
+		12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCellTableViewCell.m; sourceTree = "<group>"; };
+		12C0FFF2213C1939004F6728 /* libPods-shemtov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-shemtov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12DECFF320B5B74000BDD54C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12DECFFC20B5BD1000BDD54C /* cored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cored.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12DED01520B7075200BDD54C /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		12DED01620B7075300BDD54C /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		12E8772420A332500059ECAB /* shemtov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shemtov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E8772720A332500059ECAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12E8772820A332500059ECAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,13 +51,24 @@
 		12E8773620A332540059ECAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12E8773820A332540059ECAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E8773920A332540059ECAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9E222F2F3ABD99546972D87E /* Pods-shemtov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shemtov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shemtov/Pods-shemtov.debug.xcconfig"; sourceTree = "<group>"; };
+		B6E47D266500ACA3CF39970B /* Pods-shemtov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shemtov.release.xcconfig"; path = "Pods/Target Support Files/Pods-shemtov/Pods-shemtov.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12DECFF920B5BD1000BDD54C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12E8772120A332500059ECAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C0FFF3213C1939004F6728 /* libPods-shemtov.a in Frameworks */,
+				121EBDF120D9559A000A801A /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +80,8 @@
 			children = (
 				12E8772620A332500059ECAB /* shemtov */,
 				12E8772520A332500059ECAB /* Products */,
+				6A45A19872EE124283BE26D9 /* Pods */,
+				63DF00B4C4BAB72FE1FF1D17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				12E8772420A332500059ECAB /* shemtov.app */,
+				12DECFFC20B5BD1000BDD54C /* cored.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +97,10 @@
 		12E8772620A332500059ECAB /* shemtov */ = {
 			isa = PBXGroup;
 			children = (
+				123BB24B2124679000F3E467 /* shemtovdic.sql */,
+				12DED01520B7075200BDD54C /* DBManager.h */,
+				12DED01620B7075300BDD54C /* DBManager.m */,
+				12DECFF320B5B74000BDD54C /* GoogleService-Info.plist */,
 				12E8772720A332500059ECAB /* AppDelegate.h */,
 				12E8772820A332500059ECAB /* AppDelegate.m */,
 				12E8772A20A332500059ECAB /* ViewController.h */,
@@ -70,17 +111,61 @@
 				12E8773820A332540059ECAB /* Info.plist */,
 				12E8773920A332540059ECAB /* main.m */,
 				12E8773020A332510059ECAB /* shemtov.xcdatamodeld */,
+				121EBDED20D94995000A801A /* NamesViewController.h */,
+				121EBDEE20D94996000A801A /* NamesViewController.m */,
+				12AF022B2129A484009E2EC5 /* SimpleTableCellTableViewCell.h */,
+				12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */,
+				127E2E75213456A400087FA1 /* ViewControllerWebview.h */,
+				127E2E76213456A400087FA1 /* ViewControllerWebview.m */,
 			);
 			path = shemtov;
+			sourceTree = "<group>";
+		};
+		63DF00B4C4BAB72FE1FF1D17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12C0FFF2213C1939004F6728 /* libPods-shemtov.a */,
+				1294B440213C189F005977A4 /* libPods-shemtov.a */,
+				1294B43E213C186F005977A4 /* libGoogleToolboxForMac.a */,
+				121EBDF020D9559A000A801A /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A45A19872EE124283BE26D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E222F2F3ABD99546972D87E /* Pods-shemtov.debug.xcconfig */,
+				B6E47D266500ACA3CF39970B /* Pods-shemtov.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		12DECFFB20B5BD1000BDD54C /* cored */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12DED01220B5BD1300BDD54C /* Build configuration list for PBXNativeTarget "cored" */;
+			buildPhases = (
+				12DECFF820B5BD1000BDD54C /* Sources */,
+				12DECFF920B5BD1000BDD54C /* Frameworks */,
+				12DECFFA20B5BD1000BDD54C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cored;
+			productName = cored;
+			productReference = 12DECFFC20B5BD1000BDD54C /* cored.app */;
+			productType = "com.apple.product-type.application";
+		};
 		12E8772320A332500059ECAB /* shemtov */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12E8773D20A332540059ECAB /* Build configuration list for PBXNativeTarget "shemtov" */;
 			buildPhases = (
+				4ABBE6CC6C0812C3E450E8C8 /* [CP] Check Pods Manifest.lock */,
 				12E8772020A332500059ECAB /* Sources */,
 				12E8772120A332500059ECAB /* Frameworks */,
 				12E8772220A332500059ECAB /* Resources */,
@@ -103,6 +188,9 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Roy Leizer";
 				TargetAttributes = {
+					12DECFFB20B5BD1000BDD54C = {
+						CreatedOnToolsVersion = 9.3;
+					};
 					12E8772320A332500059ECAB = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -122,16 +210,26 @@
 			projectRoot = "";
 			targets = (
 				12E8772320A332500059ECAB /* shemtov */,
+				12DECFFB20B5BD1000BDD54C /* cored */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12DECFFA20B5BD1000BDD54C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12E8772220A332500059ECAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				12E8773720A332540059ECAB /* LaunchScreen.storyboard in Resources */,
+				123BB24C2124679000F3E467 /* shemtovdic.sql in Resources */,
+				12DECFF420B5B74100BDD54C /* GoogleService-Info.plist in Resources */,
 				12E8773420A332540059ECAB /* Assets.xcassets in Resources */,
 				12E8772F20A332510059ECAB /* Main.storyboard in Resources */,
 			);
@@ -139,15 +237,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4ABBE6CC6C0812C3E450E8C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shemtov-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		12DECFF820B5BD1000BDD54C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12E8772020A332500059ECAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				12E8773220A332510059ECAB /* shemtov.xcdatamodeld in Sources */,
+				12AF022D2129A484009E2EC5 /* SimpleTableCellTableViewCell.m in Sources */,
+				127E2E77213456A400087FA1 /* ViewControllerWebview.m in Sources */,
+				121EBDEF20D94996000A801A /* NamesViewController.m in Sources */,
 				12E8772C20A332500059ECAB /* ViewController.m in Sources */,
 				12E8773A20A332540059ECAB /* main.m in Sources */,
 				12E8772920A332500059ECAB /* AppDelegate.m in Sources */,
+				12DED01720B7075300BDD54C /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +303,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		12DED01320B5BD1300BDD54C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SR7M42YR2B;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/shemtov/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leizersoft.cored;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12DED01420B5BD1300BDD54C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SR7M42YR2B;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/shemtov/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leizersoft.cored;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		12E8773B20A332540059ECAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -224,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -276,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -285,11 +453,13 @@
 		};
 		12E8773E20A332540059ECAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E222F2F3ABD99546972D87E /* Pods-shemtov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				INFOPLIST_FILE = shemtov/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +472,13 @@
 		};
 		12E8773F20A332540059ECAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6E47D266500ACA3CF39970B /* Pods-shemtov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				INFOPLIST_FILE = shemtov/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,6 +492,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12DED01220B5BD1300BDD54C /* Build configuration list for PBXNativeTarget "cored" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12DED01320B5BD1300BDD54C /* Debug */,
+				12DED01420B5BD1300BDD54C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		12E8771F20A332500059ECAB /* Build configuration list for PBXProject "shemtov" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
