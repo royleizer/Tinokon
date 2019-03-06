@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 @import Firebase;
+#import "DBManager.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) DBManager *dbManager;
 @end
 
 @implementation AppDelegate
@@ -20,6 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [FIRApp configure];
+   
+    
     return YES;
 }
 

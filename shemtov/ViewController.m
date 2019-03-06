@@ -18,6 +18,8 @@
 @property (nonatomic, strong) DBManager *dbManager2;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 -(void) gotoMainScreen;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 @end
 
 
@@ -33,6 +35,36 @@ SEL aSelector;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+/*
+    self.ref = [[FIRDatabase database] reference];
+
+    NSMutableDictionary * subitem =[[NSMutableDictionary alloc] init];
+    [subitem setObject:@"1" forKey:@"NameID"];
+    [subitem setObject:@"רועי" forKey:@"Name"];
+    [subitem setObject:@"100" forKey:@"Rating"];
+    [subitem setObject:@"0" forKey:@"IsUniSex"];
+     [subitem setObject:@"0" forKey:@"Sex"];
+    
+    [[self.ref child:@"xname"]  setValue:subitem];
+   
+    
+    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        NSDictionary *postDict = snapshot.value;
+        
+        for(NSString * key in postDict)
+        {
+             NSDictionary * subitem =postDict[key];
+             NSLog(@"NameID : %@",[subitem objectForKey:@"NameID"]);
+             NSLog(@"Name : %@",[subitem objectForKey:@"Name"]);
+             NSLog(@"Rating : %@",[subitem objectForKey:@"Rating"]);
+             NSLog(@"IsUniSex : %@",[subitem objectForKey:@"IsUniSex"]);
+             NSLog(@"Sex : %@",[subitem objectForKey:@"Sex"]);
+        }
+    
+    }];
+    */
+    
     
     self.dbManager2 = [[DBManager alloc] initWithDatabaseFilename:@"shemtovdic.sql"];
     

@@ -6,7 +6,9 @@
 //  Copyright © 2017 norav medical. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
+@import Firebase;
 
 @interface DBManager : NSObject
 
@@ -22,5 +24,6 @@
 
 -(void)executeQuery:(NSString *)query;
 
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end

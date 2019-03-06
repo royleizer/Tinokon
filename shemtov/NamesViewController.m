@@ -12,9 +12,14 @@
 #import "ViewControllerWebview.h"
 #import <MessageUI/MessageUI.h>
 
+
+
 @interface NamesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic, strong) DBManager *dbManager;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
+
 - (IBAction)Alef:(id)sender;
 - (IBAction)Beit:(id)sender;
 
@@ -60,6 +65,8 @@ SEL bSelector;;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"shemtovdic.sql"];
@@ -115,6 +122,14 @@ SEL bSelector;;
             [self enableLetters:true];
         }
 
+    
+    self.ref = [[FIRDatabase database] reference];
+    
+    
+    
+    
+    
+    
 }
 
 -(void) gotoMainScreen
@@ -196,11 +211,14 @@ SEL bSelector;;
     {
     NSString * rowid = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"ID"]];
     
-        NSString * val = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Liked"]];
+    NSString * val = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Liked"]];
         
     NSString * name = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Name"]];
    
-     
+    NSString * isUnisex = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"IsUnisex"]];
+        
+    NSString * sex = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Sex"]];
+        
         
     bool liked = ![val boolValue];
 
@@ -255,12 +273,94 @@ SEL bSelector;;
         NSLog(@"%@", upd_query);
         
     [self.dbManager executeQuery:upd_query];
+        
+      
+        @try {
+      
+       // [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
+       
+        [self.ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
+        {
+      
+            NSDictionary * postDict   = snapshot.value;
+            NSString * strRowID = [NSString stringWithFormat:@"%@",rowid];
+            
+            if([postDict isEqual:[NSNull null]])
+            {
+                NSMutableDictionary * subitemdeflt =[[NSMutableDictionary alloc] init];
+                [subitemdeflt setObject:@"-1" forKey:@"NameID"];
+                [subitemdeflt setObject:@"" forKey:@"Name"];
+                [subitemdeflt setObject:@"0" forKey:@"Rating"];
+                [subitemdeflt setObject:@"0" forKey:@"IsUniSex"];
+                [subitemdeflt setObject:@"0" forKey:@"Sex"];
+                
+                [[self.ref child:@"-1"]  setValue:subitemdeflt];
+                
+            }
+            
+            else
+    
+            {
+            
+            NSMutableDictionary * subitem = [postDict objectForKey:strRowID];
+            
+                if(subitem==nil)
+                {
+                    //not exists,add new
+                    NSMutableDictionary * subitemnew =[[NSMutableDictionary alloc] init];
+                    [subitemnew setObject:strRowID forKey:@"NameID"];
+                    [subitemnew setObject:name forKey:@"Name"];
+                    [subitemnew setObject:@"1" forKey:@"Rating"];
+                    [subitemnew setObject:isUnisex forKey:@"IsUniSex"];
+                    [subitemnew setObject:sex forKey:@"Sex"];
+                    
+                    [[self.ref child:strRowID]  setValue:subitemnew];
+                    
+                }
+                else
+                {
+                    //update ranking
+                    
+                    int rating =[ [subitem objectForKey:@"Rating"] intValue];
+                    if(liked)
+                        rating++;
+                    else
+                        if(rating>0)
+                        {
+                            rating--;
+                        }
+                    
+                    NSString * srating = [NSString stringWithFormat:@"%d",rating];
+                    
+                    [subitem setObject:strRowID forKey:@"NameID"];
+                    [subitem setObject:name forKey:@"Name"];
+                    [subitem setObject:srating forKey:@"Rating"];
+                    [subitem setObject:isUnisex forKey:@"IsUniSex"];
+                    [subitem setObject:sex forKey:@"Sex"];
+                    
+                    [[self.ref child:strRowID]  setValue:subitem];
+                    
+                }
+                
+            }
+                
+            
+        }];
+            
+        } @catch (NSException *exception) {
+            NSLog(@"Exception: %@",exception);
+        }
+      
     }
         
    // Load the relevant data.
    tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
         
-         [self.table reloadData];
+   [self.table reloadData];
+        
+      
+    
+        
     }
 }
 
