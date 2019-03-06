@@ -128,7 +128,7 @@ SEL aSelector;
 
 - (IBAction)btnShowBibleNames:(id)sender {
     
-      [self showNamesByType:@"שמות מהתנך" screenType:5];
+      [self showNamesByType:@"דירוג המשתמשים" screenType:5];
 }
 
 

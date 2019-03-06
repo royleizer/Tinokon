@@ -70,6 +70,8 @@ SEL bSelector;;
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"shemtovdic.sql"];
+    self.ref = [[FIRDatabase database] reference];
+    
     
     
     
@@ -78,36 +80,107 @@ SEL bSelector;;
     
     switch (self.sex) {
         case 0:
-              viewquery =[NSString stringWithFormat:@"%@%d", @"select * from t_names where Sex=",self.sex];
-            currentScreen=0;
+             viewquery =[NSString stringWithFormat:@"%@%d", @"select * from t_names where Sex=",self.sex];
+             currentScreen=0;
+             tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+             [self.table reloadData];
             break;
         case 1:
-              viewquery =[NSString stringWithFormat:@"%@%d", @"select * from t_names where Sex=",self.sex];
+            viewquery =[NSString stringWithFormat:@"%@%d", @"select * from t_names where Sex=",self.sex];
             currentScreen=1;
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
             break;
             
         case 2:
-              viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where Liked=1"];
+            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where Liked=1"];
             currentScreen=2;
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
             break;
             
         case 3:
             viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where PopularYear=2018 order by sex,PopularRating"];
             currentScreen=3;
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
             break;
             
         case 4:
             viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where IsUnisex=1 order by Name"];
             currentScreen=4;
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
             break;
-        default:
+        
+        case 5:
+            
+            
+            currentScreen=5;
+            
+            
+            @try
+            {
+            
+                [self.ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
+                {
+                    NSDictionary *postDict = snapshot.value;
+                    NSString * selectedNamesIDs=@"";
+                    
+                    for(NSString * key in postDict)
+                    {
+                        NSDictionary * subitem =postDict[key];
+                        NSString * srate =  [subitem objectForKey:@"Rating"];
+                        int rating =[srate intValue];
+                        if(rating>1)
+                        {
+                        NSLog(@"NameID : %@",[subitem objectForKey:@"NameID"]);
+                        NSLog(@"Name : %@",[subitem objectForKey:@"Name"]);
+                        NSLog(@"Rating : %@",[subitem objectForKey:@"Rating"]);
+                        NSLog(@"IsUniSex : %@",[subitem objectForKey:@"IsUniSex"]);
+                        NSLog(@"Sex : %@",[subitem objectForKey:@"Sex"]);
+                        
+                        selectedNamesIDs=[NSString stringWithFormat:@"%@%@%@",selectedNamesIDs,[subitem objectForKey:@"NameID"],@","];
+                            
+                        }
+                    }
+                    
+                if([selectedNamesIDs length]>0)
+                {
+                    selectedNamesIDs = [selectedNamesIDs substringToIndex:[selectedNamesIDs length]-1];
+                    
+                    viewquery =[NSString stringWithFormat:@"%@%@%@", @"select * from t_names where ID in (", selectedNamesIDs , @")"];
+                  
+                    tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+                      [self.table reloadData];
+                   
+                }
+                else
+                {
+                    tableData =nil;
+                    [self.table reloadData];
+                }
+               
+                   
+                    
+                }];
+                
+            }@catch (NSException *exception)
+            {
+                NSLog(@"Exception :%@",exception);
+                
+            }
+            
+            
             break;
+            
+            
+
     }
     
  
     
-    // Load the relevant data.
-    tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+ 
     //tableData = [NSArray arrayWithObjects:@"A",@"B",@"C" , nil];
     
      bSelector=@selector(gotoMainScreen);
@@ -123,9 +196,7 @@ SEL bSelector;;
         }
 
     
-    self.ref = [[FIRDatabase database] reference];
-    
-    
+
     
     
     
@@ -441,8 +512,34 @@ SEL bSelector;;
 
 -(void)updateTheList:(NSString *) letter
 {
+   
+    switch (currentScreen) {
+        case 0:
+            viewquery =[NSString stringWithFormat:@"%@%d%@%@%@", @"select * from t_names where Sex=",self.sex,@" And Name like '",letter,@"%'"];
+            break;
+        case 1:
+            viewquery =[NSString stringWithFormat:@"%@%d%@%@%@", @"select * from t_names where Sex=",self.sex,@" And Name like '",letter,@"%'"];
+            break;
+            
+        case 2:
+            viewquery =[NSString stringWithFormat:@"%@%@%@", @"select * from t_names where Liked=1 And Name like  '",letter,@"%'"];
+          
+            break;
+            
+        case 3:
+            viewquery =[NSString stringWithFormat:@"%@%@%@%@", @"select * from t_names where PopularYear=2018 And Name like  '",letter,@"%'",@" order by sex,PopularRating"];
+            break;
+            
+        case 4:
+            viewquery =[NSString stringWithFormat:@"%@%@%@%@",
+                     @"select * from t_names where IsUnisex=1 And Name like '",letter,@"%'", @" order by Name"];
+            break;
+            
+        default:
+            break;
+    }
     
-    viewquery =[NSString stringWithFormat:@"%@%d%@%@%@", @"select * from t_names where Sex=",self.sex,@" And Name like '",letter,@"%'"];
+   
     
     // Load the relevant data.
     tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
