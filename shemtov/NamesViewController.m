@@ -117,7 +117,8 @@ SEL bSelector;;
             
             
             currentScreen=5;
-            
+            tableData =nil;
+            [self.table reloadData];
             
             @try
             {
