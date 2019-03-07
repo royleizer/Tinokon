@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 -(void) gotoMainScreen;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
+- (IBAction)btnAbout:(id)sender;
 
 @end
 
@@ -161,4 +162,9 @@ SEL aSelector;
     }];
 }
 
+- (IBAction)btnAbout:(id)sender {
+ 
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://sites.google.com/view/tinokon"] options:@{} completionHandler:nil];
+
+}
 @end

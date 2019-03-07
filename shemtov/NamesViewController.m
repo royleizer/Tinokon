@@ -45,6 +45,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn20;
 @property (weak, nonatomic) IBOutlet UIButton *btn21;
 @property (weak, nonatomic) IBOutlet UIButton *btn22;
+- (IBAction)btnShareWhatsApp:(id)sender;
+- (IBAction)btnShowAll:(id)sender;
 
 @end
 
@@ -824,16 +826,75 @@ SEL bSelector;;
 }
 
     
-    /*
-    NSString * msg = @"YOUR MSG";
-    NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",msg];
-    NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
-        [[UIApplication sharedApplication] openURL: whatsappURL];
-    } else {
-        // Cannot open whatsapp
+
+
+- (IBAction)btnShareWhatsApp:(id)sender {
+    
+    @try {
+
+    
+    NSString * sqlFavNames =[NSString stringWithFormat:@"%@", @"select * from t_names where Liked=1"];
+    NSArray * dataTable = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:sqlFavNames]];
+    
+    if([dataTable count]>0)
+    {
+            NSMutableString * favoriteNames=[[NSMutableString alloc] init];
+        
+            for(int i=0;i<[dataTable count];i++)
+            {
+                NSString * favname = [[dataTable objectAtIndex:i] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Name"]];
+                [favoriteNames appendString:[NSString stringWithFormat:@"%@ ,",favname]];
+                NSLog(@"%@",favname);
+            }
+        
+        
+        NSString * msg = [NSString stringWithFormat:@"%@: %@", @":המלצה לשמות עבור הבייבי",favoriteNames];
+        NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",msg];
+        NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
+            [[UIApplication sharedApplication] openURL: whatsappURL];
+        } else {
+            // Cannot open whatsapp
+        }
+        
     }
-     */
+    } @catch (NSException *exception) {
+        NSLog(@"EXception: %@",exception);
+    }
+    
+}
 
-
+- (IBAction)btnShowAll:(id)sender {
+    
+    switch (currentScreen) {
+        case 0:
+            viewquery =[NSString stringWithFormat:@"%@%d", @"select * from t_names where Sex=",self.sex];
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
+            break;
+        case 1:
+            viewquery =[NSString stringWithFormat:@"%@%d", @"select * from t_names where Sex=",self.sex];
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
+            break;
+            
+        case 2:
+            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where Liked=1"];
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
+            break;
+            
+        case 3:
+            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where PopularYear=2018 order by sex,PopularRating"];
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
+            break;
+            
+        case 4:
+            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where IsUnisex=1 order by Name"];
+            tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
+            [self.table reloadData];
+            break;
+    }
+}
 @end
