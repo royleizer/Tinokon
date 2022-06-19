@@ -10,11 +10,12 @@
 		121EBDEF20D94996000A801A /* NamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121EBDEE20D94996000A801A /* NamesViewController.m */; };
 		121EBDF120D9559A000A801A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 121EBDF020D9559A000A801A /* libsqlite3.tbd */; };
 		123BB24C2124679000F3E467 /* shemtovdic.sql in Resources */ = {isa = PBXBuildFile; fileRef = 123BB24B2124679000F3E467 /* shemtovdic.sql */; };
-		127E2E77213456A400087FA1 /* ViewControllerWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E2E76213456A400087FA1 /* ViewControllerWebview.m */; };
 		12AF022D2129A484009E2EC5 /* SimpleTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */; };
 		12C0FFF3213C1939004F6728 /* libPods-shemtov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C0FFF2213C1939004F6728 /* libPods-shemtov.a */; };
 		12DECFF420B5B74100BDD54C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DECFF320B5B74000BDD54C /* GoogleService-Info.plist */; };
 		12DED01720B7075300BDD54C /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DED01620B7075300BDD54C /* DBManager.m */; };
+		12E320D2285F64C800979A0B /* ViewControllerWebViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E320D1285F64C800979A0B /* ViewControllerWebViewer.m */; };
+		12E320D4285F65EA00979A0B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E320D3285F65EA00979A0B /* WebKit.framework */; };
 		12E8772920A332500059ECAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E8772820A332500059ECAB /* AppDelegate.m */; };
 		12E8772C20A332500059ECAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E8772B20A332500059ECAB /* ViewController.m */; };
 		12E8772F20A332510059ECAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E8772D20A332510059ECAB /* Main.storyboard */; };
@@ -29,8 +30,6 @@
 		121EBDEE20D94996000A801A /* NamesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NamesViewController.m; sourceTree = "<group>"; };
 		121EBDF020D9559A000A801A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		123BB24B2124679000F3E467 /* shemtovdic.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = shemtovdic.sql; sourceTree = "<group>"; };
-		127E2E75213456A400087FA1 /* ViewControllerWebview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerWebview.h; sourceTree = "<group>"; };
-		127E2E76213456A400087FA1 /* ViewControllerWebview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWebview.m; sourceTree = "<group>"; };
 		1294B43E213C186F005977A4 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1294B440213C189F005977A4 /* libPods-shemtov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-shemtov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AF022B2129A484009E2EC5 /* SimpleTableCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleTableCellTableViewCell.h; sourceTree = "<group>"; };
@@ -40,6 +39,9 @@
 		12DECFFC20B5BD1000BDD54C /* cored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DED01520B7075200BDD54C /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		12DED01620B7075300BDD54C /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		12E320D0285F64C800979A0B /* ViewControllerWebViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerWebViewer.h; sourceTree = "<group>"; };
+		12E320D1285F64C800979A0B /* ViewControllerWebViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWebViewer.m; sourceTree = "<group>"; };
+		12E320D3285F65EA00979A0B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		12E8772420A332500059ECAB /* shemtov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shemtov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E8772720A332500059ECAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12E8772820A332500059ECAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			files = (
 				12C0FFF3213C1939004F6728 /* libPods-shemtov.a in Frameworks */,
 				121EBDF120D9559A000A801A /* libsqlite3.tbd in Frameworks */,
+				12E320D4285F65EA00979A0B /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +118,8 @@
 				121EBDEE20D94996000A801A /* NamesViewController.m */,
 				12AF022B2129A484009E2EC5 /* SimpleTableCellTableViewCell.h */,
 				12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */,
-				127E2E75213456A400087FA1 /* ViewControllerWebview.h */,
-				127E2E76213456A400087FA1 /* ViewControllerWebview.m */,
+				12E320D0285F64C800979A0B /* ViewControllerWebViewer.h */,
+				12E320D1285F64C800979A0B /* ViewControllerWebViewer.m */,
 			);
 			path = shemtov;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 		63DF00B4C4BAB72FE1FF1D17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12E320D3285F65EA00979A0B /* WebKit.framework */,
 				12C0FFF2213C1939004F6728 /* libPods-shemtov.a */,
 				1294B440213C189F005977A4 /* libPods-shemtov.a */,
 				1294B43E213C186F005977A4 /* libGoogleToolboxForMac.a */,
@@ -185,7 +189,7 @@
 		12E8771C20A332500059ECAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Roy Leizer";
 				TargetAttributes = {
 					12DECFFB20B5BD1000BDD54C = {
@@ -193,6 +197,7 @@
 					};
 					12E8772320A332500059ECAB = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -272,11 +277,11 @@
 			files = (
 				12E8773220A332510059ECAB /* shemtov.xcdatamodeld in Sources */,
 				12AF022D2129A484009E2EC5 /* SimpleTableCellTableViewCell.m in Sources */,
-				127E2E77213456A400087FA1 /* ViewControllerWebview.m in Sources */,
 				121EBDEF20D94996000A801A /* NamesViewController.m in Sources */,
 				12E8772C20A332500059ECAB /* ViewController.m in Sources */,
 				12E8773A20A332540059ECAB /* main.m in Sources */,
 				12E8772920A332500059ECAB /* AppDelegate.m in Sources */,
+				12E320D2285F64C800979A0B /* ViewControllerWebViewer.m in Sources */,
 				12DED01720B7075300BDD54C /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +316,7 @@
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/shemtov/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +335,7 @@
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/shemtov/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +372,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -392,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -425,6 +431,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -444,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -456,16 +463,20 @@
 			baseConfigurationReference = 9E222F2F3ABD99546972D87E /* Pods-shemtov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				INFOPLIST_FILE = shemtov/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leizersoft.shemtov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "shemtov/shemtov-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -475,16 +486,19 @@
 			baseConfigurationReference = B6E47D266500ACA3CF39970B /* Pods-shemtov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				INFOPLIST_FILE = shemtov/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leizersoft.shemtov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "shemtov/shemtov-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
