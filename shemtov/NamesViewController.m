@@ -266,6 +266,7 @@ SEL bSelector;;
     
     NSInteger ratingValue = [Rating intValue];
 
+    
     if(ratingValue>0)
     {
         cell.lblName.text =[NSString stringWithFormat:@"%@ (%@)",Name,Rating];
@@ -279,16 +280,10 @@ SEL bSelector;;
     
     cell.btnSaveName.tag =indexPath.row;
 
-    NSString * name = cell.lblName.text;
     
-    //if name contains (
-    if([name rangeOfString:@"("].location != NSNotFound)
-    {
-        name = [[name componentsSeparatedByString:@"("] objectAtIndex:0];
-        NSLog(@"%@",name);
-    }
+  
     
-    cell.btnShowNameInfo.tag=name;
+    cell.btnShowNameInfo.tag= Name;
     
     
     NSString * gender =  [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Sex"]];
