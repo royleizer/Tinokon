@@ -10,8 +10,9 @@
 #import "DBManager.h"
 #import "SimpleTableCellTableViewCell.h"
 #import "ViewControllerWebview.h"
+#import "ViewControllerWebViewer.h"
 #import <MessageUI/MessageUI.h>
-
+#import "ViewController.h"
 
 
 @interface NamesViewController ()
@@ -22,6 +23,7 @@
 
 - (IBAction)Alef:(id)sender;
 - (IBAction)Beit:(id)sender;
+- (IBAction)openOnlineHelp:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
@@ -45,6 +47,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn20;
 @property (weak, nonatomic) IBOutlet UIButton *btn21;
 @property (weak, nonatomic) IBOutlet UIButton *btn22;
+@property (weak, nonatomic) IBOutlet UIButton *btnHelp;
 - (IBAction)btnShareWhatsApp:(id)sender;
 - (IBAction)btnShowAll:(id)sender;
 
@@ -102,7 +105,7 @@ SEL bSelector;;
             break;
             
         case 3:
-            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where PopularYear=2018 order by sex,PopularRating"];
+            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where PopularYear=2022 order by sex,PopularRating"];
             currentScreen=3;
             tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
             [self.table reloadData];
@@ -133,8 +136,13 @@ SEL bSelector;;
                     for(NSString * key in postDict)
                     {
                         NSDictionary * subitem =postDict[key];
+                        
                         NSString * srate =  [subitem objectForKey:@"Rating"];
                         int rating =[srate intValue];
+                        
+                        NSString * snameid =  [subitem objectForKey:@"NameID"];
+                        int nid =[snameid intValue];
+                        
                         if(rating>1)
                         {
                         NSLog(@"NameID : %@",[subitem objectForKey:@"NameID"]);
@@ -145,6 +153,11 @@ SEL bSelector;;
                         
                         selectedNamesIDs=[NSString stringWithFormat:@"%@%@%@",selectedNamesIDs,[subitem objectForKey:@"NameID"],@","];
                             
+                            NSString * upd_query=  [NSString stringWithFormat:@"%@%d%@%d",@"update t_names set Rating=",rating ,@" where ID=",nid];
+                            NSLog(@"%@", upd_query);
+                            
+                            [self.dbManager executeQuery:upd_query];
+                            
                         }
                     }
                     
@@ -152,7 +165,7 @@ SEL bSelector;;
                 {
                     selectedNamesIDs = [selectedNamesIDs substringToIndex:[selectedNamesIDs length]-1];
                     
-                    viewquery =[NSString stringWithFormat:@"%@%@%@", @"select * from t_names where ID in (", selectedNamesIDs , @")"];
+                    viewquery =[NSString stringWithFormat:@"%@%@%@", @"select * from t_names where ID in (", selectedNamesIDs , @") order by rating DESC"];
                   
                     tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
                       [self.table reloadData];
@@ -247,14 +260,36 @@ SEL bSelector;;
    
     [cell.btnShowNameInfo addTarget:self  action:@selector(showNameInfoClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    cell.lblName.text = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Name"]];
+    
+    NSString * Name = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Name"]];
+    NSString * Rating = [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Rating"]];
+    
+    NSInteger ratingValue = [Rating intValue];
+
+    if(ratingValue>0)
+    {
+        cell.lblName.text =[NSString stringWithFormat:@"%@ (%@)",Name,Rating];
+    }
+    else
+    {
+        cell.lblName.text = Name;
+    }
+   
     
     
     cell.btnSaveName.tag =indexPath.row;
 
+    NSString * name = cell.lblName.text;
     
+    //if name contains (
+    if([name rangeOfString:@"("].location != NSNotFound)
+    {
+        name = [[name componentsSeparatedByString:@"("] objectAtIndex:0];
+        NSLog(@"%@",name);
+    }
     
-    cell.btnShowNameInfo.tag=cell.lblName.text;
+    cell.btnShowNameInfo.tag=name;
+    
     
     NSString * gender =  [[tableData objectAtIndex:indexPath.row] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"Sex"]];
     
@@ -463,6 +498,26 @@ SEL bSelector;;
                  
                  NSString * address = [NSString stringWithFormat:@"%@%@",@"https://cse.google.co.il/cse?cx=014954932560753297620:v_bmgcccg4e&q=",[btnInfo tag]];
                  
+                 ViewControllerWebViewer  *gview=[self.storyboard instantiateViewControllerWithIdentifier:@"v_web2"];
+                 
+                 UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:gview];
+                 
+                 UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"חזרה" style:UIBarButtonItemStylePlain  target:self  action:bSelector];
+                 item.enabled=true;
+                 
+                 gview.navigationItem.hidesBackButton=YES;
+                 gview.navigationItem.leftBarButtonItem=item;
+                 gview.navigationItem.title=@"חזרה";
+                 gview.url=address;
+                 
+                 [nav popViewControllerAnimated:YES];
+                 
+                 [gview setTitle:@"מסך מידע"];
+                 [self presentViewController:nav animated:YES completion:^{}];
+
+                 
+            
+                 /*
                  ViewControllerWebview *gview=[self.storyboard instantiateViewControllerWithIdentifier:@"v_web"];
                  
                  UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:gview];
@@ -479,7 +534,7 @@ SEL bSelector;;
                  
                  [gview setTitle:@"מסך מידע"];
                  [self presentViewController:nav animated:YES completion:^{}];
-                
+                  */
              });
              
              
@@ -530,7 +585,7 @@ SEL bSelector;;
             break;
             
         case 3:
-            viewquery =[NSString stringWithFormat:@"%@%@%@%@", @"select * from t_names where PopularYear=2018 And Name like  '",letter,@"%'",@" order by sex,PopularRating"];
+            viewquery =[NSString stringWithFormat:@"%@%@%@%@", @"select * from t_names where PopularYear=2022 And Name like  '",letter,@"%'",@" order by sex,PopularRating"];
             break;
             
         case 4:
@@ -556,6 +611,71 @@ SEL bSelector;;
 
 - (IBAction)Beit:(id)sender {
      [self updateTheList:@"ב"];
+}
+
+- (IBAction)openOnlineHelp:(id)sender {
+    
+    
+    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
+       NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://www.google.com"]];
+       request.timeoutInterval = 10;
+       
+       [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+        {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"response status code: %ld, error status : %@", (long)[httpResponse statusCode], error.description);
+            
+            if ((long)[httpResponse statusCode] >= 200 && (long)[httpResponse statusCode]< 400)
+            {
+                // do stuff
+                NSLog(@"Connected!");
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    UIButton * btnInfo = (UIButton *) sender;
+                    
+                    NSString * address = @"https://sites.google.com/view/tinokon";
+                    
+                    ViewControllerWebview *gview=[self.storyboard instantiateViewControllerWithIdentifier:@"v_web2"];
+                    
+                    UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:gview];
+                    
+                    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"חזרה" style:UIBarButtonItemStylePlain  target:self  action:bSelector];
+                    item.enabled=true;
+                    
+                    gview.navigationItem.hidesBackButton=YES;
+                    gview.navigationItem.leftBarButtonItem=item;
+                    gview.navigationItem.title=@"חזרה";
+                    gview.url=address;
+                    
+                    [nav popViewControllerAnimated:YES];
+                    
+                    [gview setTitle:@"מסך מידע"];
+                    [self presentViewController:nav animated:YES completion:^{}];
+                   
+                });
+                
+                
+            }
+            else
+            {
+                NSLog(@"Not connected!");
+                
+                NSString * msg = @"Internet is not avaliable.";
+                
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"אין חיבור לאינטרנט!"
+                                                                               message:msg
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction * action) {}];
+                
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }];
+    
+    
 }
 
 - (IBAction)btnSetFavorite:(id)sender {
@@ -864,6 +984,20 @@ SEL bSelector;;
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+   
+    
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    ViewController * viewcont = [[ViewController alloc] init];
+    [viewcont updateFavoritsCount];
+}
+
+
 - (IBAction)btnShowAll:(id)sender {
     
     switch (currentScreen) {
@@ -885,7 +1019,7 @@ SEL bSelector;;
             break;
             
         case 3:
-            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where PopularYear=2018 order by sex,PopularRating"];
+            viewquery =[NSString stringWithFormat:@"%@", @"select * from t_names where PopularYear=2022 order by sex"];
             tableData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:viewquery]];
             [self.table reloadData];
             break;

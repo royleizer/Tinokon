@@ -11,7 +11,6 @@
 		121EBDF120D9559A000A801A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 121EBDF020D9559A000A801A /* libsqlite3.tbd */; };
 		123BB24C2124679000F3E467 /* shemtovdic.sql in Resources */ = {isa = PBXBuildFile; fileRef = 123BB24B2124679000F3E467 /* shemtovdic.sql */; };
 		12AF022D2129A484009E2EC5 /* SimpleTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */; };
-		12C0FFF3213C1939004F6728 /* libPods-shemtov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C0FFF2213C1939004F6728 /* libPods-shemtov.a */; };
 		12DECFF420B5B74100BDD54C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DECFF320B5B74000BDD54C /* GoogleService-Info.plist */; };
 		12DED01720B7075300BDD54C /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DED01620B7075300BDD54C /* DBManager.m */; };
 		12E320D2285F64C800979A0B /* ViewControllerWebViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E320D1285F64C800979A0B /* ViewControllerWebViewer.m */; };
@@ -23,6 +22,7 @@
 		12E8773420A332540059ECAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E8773320A332540059ECAB /* Assets.xcassets */; };
 		12E8773720A332540059ECAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E8773520A332540059ECAB /* LaunchScreen.storyboard */; };
 		12E8773A20A332540059ECAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E8773920A332540059ECAB /* main.m */; };
+		19DB4ECD8CF6952C50AC7871 /* Pods_shemtov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7C5C534005F3BD0910EB82 /* Pods_shemtov.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +31,8 @@
 		121EBDF020D9559A000A801A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		123BB24B2124679000F3E467 /* shemtovdic.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = shemtovdic.sql; sourceTree = "<group>"; };
 		1294B43E213C186F005977A4 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1294B440213C189F005977A4 /* libPods-shemtov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-shemtov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AF022B2129A484009E2EC5 /* SimpleTableCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleTableCellTableViewCell.h; sourceTree = "<group>"; };
 		12AF022C2129A484009E2EC5 /* SimpleTableCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCellTableViewCell.m; sourceTree = "<group>"; };
-		12C0FFF2213C1939004F6728 /* libPods-shemtov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-shemtov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DECFF320B5B74000BDD54C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		12DECFFC20B5BD1000BDD54C /* cored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DED01520B7075200BDD54C /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -54,6 +52,7 @@
 		12E8773820A332540059ECAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E8773920A332540059ECAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E222F2F3ABD99546972D87E /* Pods-shemtov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shemtov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shemtov/Pods-shemtov.debug.xcconfig"; sourceTree = "<group>"; };
+		AD7C5C534005F3BD0910EB82 /* Pods_shemtov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shemtov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E47D266500ACA3CF39970B /* Pods-shemtov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shemtov.release.xcconfig"; path = "Pods/Target Support Files/Pods-shemtov/Pods-shemtov.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,9 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12C0FFF3213C1939004F6728 /* libPods-shemtov.a in Frameworks */,
 				121EBDF120D9559A000A801A /* libsqlite3.tbd in Frameworks */,
 				12E320D4285F65EA00979A0B /* WebKit.framework in Frameworks */,
+				19DB4ECD8CF6952C50AC7871 /* Pods_shemtov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,10 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				12E320D3285F65EA00979A0B /* WebKit.framework */,
-				12C0FFF2213C1939004F6728 /* libPods-shemtov.a */,
-				1294B440213C189F005977A4 /* libPods-shemtov.a */,
 				1294B43E213C186F005977A4 /* libGoogleToolboxForMac.a */,
 				121EBDF020D9559A000A801A /* libsqlite3.tbd */,
+				AD7C5C534005F3BD0910EB82 /* Pods_shemtov.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,7 +314,7 @@
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/shemtov/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,7 +333,7 @@
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/shemtov/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +347,7 @@
 		12E8773B20A332540059ECAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -398,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -408,6 +407,7 @@
 		12E8773C20A332540059ECAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -451,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -467,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				INFOPLIST_FILE = shemtov/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SR7M42YR2B;
 				INFOPLIST_FILE = shemtov/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
