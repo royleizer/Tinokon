@@ -70,9 +70,7 @@ SEL bSelector;;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    
+    self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"shemtovdic.sql"];
     self.ref = [[FIRDatabase database] reference];
